@@ -28,7 +28,7 @@ public class AndroidView extends AppCompatActivity {
         mainButton = findViewById(R.id.button);
     }
 
-    public void onClick(View view){
+    public void enterData(View view){
         model.setData(mainEditText.getText().toString());
         mainText.setText(model.getData());
     }
