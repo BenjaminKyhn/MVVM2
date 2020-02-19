@@ -1,5 +1,7 @@
 package com.example.mvvm2.Persistence;
 
+import android.util.Log;
+
 import com.example.mvvm2.Model.Model;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -46,9 +48,10 @@ public class FirebaseHandler {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
                 String data = dataSnapshot.getValue(String.class);
-                if (!data.equals(model.getData())){
-                    model.setData(data);
-                }
+//                if (!data.equals(model.getData())){
+//                    model.setData(data);
+//                }
+                model.setData(data);
             }
 
             @Override
