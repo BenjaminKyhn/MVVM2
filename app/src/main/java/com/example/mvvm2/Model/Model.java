@@ -10,6 +10,9 @@ public class Model extends Observable {
     }
 
     public void setData(String data) {
+        if (data == null)
+            return;
+
         this.data = data;
         super.setChanged();
         super.notifyObservers();

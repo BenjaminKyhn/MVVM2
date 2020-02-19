@@ -19,7 +19,7 @@ public class AndroidView extends AppCompatActivity {
     private TextView outputView;
     private EditText inputText;
     private Button enterButton;
-    private LowerCasePresenter lowerCasePresenter = new LowerCasePresenter();
+    private LowerCasePresenter lowerCasePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +35,26 @@ public class AndroidView extends AppCompatActivity {
         observePresenter();
     }
 
-    private void initialiseModulesWithFirebase(){
+    private void initialiseModulesWithFirebase() {
         FirebaseHandler dataProvider = new FirebaseHandler(null);
         Model model = ((FirebaseHandler) dataProvider).getModel();
-        lowerCasePresenter = new LowerCasePresenter();
+        lowerCasePresenter = new LowerCasePresenter(model);
     }
 
     private void observePresenter(){
         lowerCasePresenter.addObserver(new Observer() {
             @Override
             public void update(Observable o, Object arg) {
-                String data = ((LowerCasePresenter) o).getPresentableData();
-                outputView.setText(data);
+                if (o instanceof LowerCasePresenter){
+                    String data = ((LowerCasePresenter) o).getPresentableData();
+                    outputView.setText(data);
+                }
             }
         });
     }
 
     public void enterData(View view){
         String input = inputText.getText().toString();
-
         lowerCasePresenter.setData(input);
     }
 }
