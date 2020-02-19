@@ -1,7 +1,5 @@
 package com.example.mvvm2.Persistence;
 
-import android.util.Log;
-
 import com.example.mvvm2.Model.Model;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
