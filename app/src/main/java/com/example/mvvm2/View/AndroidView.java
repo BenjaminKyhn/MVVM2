@@ -23,9 +23,9 @@ public class AndroidView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainText = findViewById(R.id.textView);
-        mainEditText = findViewById(R.id.editText);
-        mainButton = findViewById(R.id.button);
+        mainText = findViewById(R.id.outputView);
+        mainEditText = findViewById(R.id.inputText);
+        mainButton = findViewById(R.id.enterButton);
     }
 
     public void enterData(View view){

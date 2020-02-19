@@ -8,7 +8,7 @@
     tools:context=".View.AndroidView">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/outputView"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal"
@@ -17,7 +17,7 @@
         android:text="Transformed text will be shown here" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/inputText"
         android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:text="Type here"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/enterButton"
         android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
