@@ -1,6 +1,8 @@
 package com.example.mvvm2.Model;
 
-public class Model {
+import java.util.Observable;
+
+public class Model extends Observable {
     String data = "Empty string";
 
     public String getData() {
@@ -9,5 +11,7 @@ public class Model {
 
     public void setData(String data) {
         this.data = data;
+        super.setChanged();
+        super.notifyObservers();
     }
 }
